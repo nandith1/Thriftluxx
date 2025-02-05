@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thriftlux</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        /* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* Header styles */
+header {
+    background-color: #f0f0f0; /* Background color for the header */
+    padding: 20px 0; /* Top and bottom padding */
+}
+
+/* Container for centering */
+.container {
+    max-width: 960px; /* Adjust as needed */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Logo styles */
+.logo {
+    text-align: center; /* Center the logo */
+}
+
+.logo img {
+    max-width: 200px; /* Adjust as needed */
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Center the menu */
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 20px; /* Adjust spacing between menu items */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333; /* Link color */
+}
+nav a:hover {
+    color: lightgrey; /* Change color on hover */
+}
+nav a {
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+.banner img{
+    height: 90vh;
+}
+/* Products styles */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.card {
+    background-color: #f0f0f0;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.card h3 {
+    color: black;
+}
+.card p {
+    font-size: 14px;
+    color: black;
+}
+.card a {
+text-decoration: none;
+color: #fff;
+background-color: lightgray;
+padding: 8px 15px;
+border-radius: 5px;
+display: inline-block;
+margin-top: 10px;
+}
+.card a:hover {
+background-color: #333;
+}
+.card {
+margin-top: 30px;
+}
+
+.card {
+border: 1px solid lightgray;
+padding: 20px;
+margin-bottom: 20px;
+text-align: center;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img:hover {
+    transform: scale(1.1); /* Zoom in effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+.heading{
+    text-align: center;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Overall background color */
+}
+
+/* Fullscreen container */
+.split-container {
+    display: flex;
+    height: 100vh;
+    background-color: #f0f0f0; /* Main container background color */
+}
+
+/* Left side (photo) */
+.left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8e8e8; /* Left side background color */
+}
+
+.left img {
+    width: 90%;
+    height: auto;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Right side (video) */
+.right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d8d8d8; /* Right side background color */
+}
+
+.right video {
+    width: 90%;
+    height: auto;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .split-container {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .left img, .right video {
+        width: 95%;
+    }
+}
+/* Full-Screen Container */
+.signup-container {
+    display: flex;
+    height: 80vh;
+    background-color: #fff;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+/* Left Side: Logo Section */
+.logo-section {
+    flex: 1;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+.logo-section img {
+    width: 227%;
+    height: 581px;
+    padding: 33px 23px;
+
+}
+
+/* Right Side: Form Section */
+.form-section {
+    flex: -4.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+}
+
+.form-content {
+    max-width: 400px;
+    width: 100%;
+    background-color: #f0f0f0;
+}
+
+.form-content h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.form-content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    border-color: #f0f0f0;
+    outline: none;
+}
+
+/* Button */
+.btn {
+    width: 100%;
+    background-color:black;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: lightgray;
+}
+
+/* Sign-In Link */
+.signin-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.signin-link a {
+    color: black;
+    text-decoration: none;
+}
+
+.signin-link a:hover {
+    text-decoration: underline;
+}
+footer {
+    background-color: #f0f0f0;
+    color: black;
+    padding: -13px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 30px auto;
+    gap: 121px;
+}
+
+/* Logo Section */
+.footer-logo {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-logo img {
+    max-width: 220px;
+    margin-bottom: -12px;
+    padding-top: 2px;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    color: black;
+}
+
+/* Contact Info Section */
+.footer-contact {
+    flex: 2;
+}
+
+.footer-contact h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer-contact i {
+    margin-right: 8px;
+    color: black;
+}
+
+/* Social Media Section */
+.footer-social {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-social h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-social a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-social a i {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.footer-social a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: -71px;
+    border-top: 1px black;
+    padding-top: 7px;
+    font-size: 14px;
+    color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-contact {
+        margin-top: 20px;
+    }
+
+    .footer-social {
+        margin-top: 20px;
+    }
+    /* Responsive Design */
+
+/* Mobile Devices (up to 768px) */
+@media (max-width: 768px) {
+
+    /* Header Styles */
+    header {
+        padding: 10px 0;
+    }
+
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* Navigation */
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    .banner img {
+        height: auto; /* Adjust image height */
+        width: 100%;
+    }
+
+    /* Product Cards */
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%; /* Make cards take up more space */
+        margin-bottom: 15px;
+    }
+
+    .card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* About Section */
+    .about {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .first-div,
+    .second-div {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .first-div img {
+        width: 100%;
+    }
+
+    .second-div video {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Signup Section */
+    .signup-container {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .logo-section img {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .form-section {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form-content {
+        width: 100%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-contact,
+    .footer-social {
+        margin-top: 20px;
+    }
+
+    .footer-logo img {
+        width: 150px;
+    }
+
+    .footer-bottom {
+        margin-top: 20px;
+    }
+}
+
+/* Tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .banner img {
+        height: 80vh; /* Adjust for tablets */
+    }
+
+    .card-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card {
+        width: 45%;
+    }
+
+    .signup-container {
+        flex-direction: row;
+    }
+
+    .logo-section img {
+        width: 60%;
+    }
+
+    .form-section {
+        width: 60%;
+    }
+
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .footer-logo img {
+        width: 180px;
+    }
+
+    .footer-bottom {
+        margin-top: 10px;
+    }
+}
+
+/* Desktop Devices (1024px and above) */
+@media (min-width: 1024px) {
+    .banner img {
+        height: 90vh; /* Keep full screen height on large screens */
+    }
+
+    .card-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card {
+        width: 22%; /* Cards become smaller on large screens */
+    }
+
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-logo img {
+        width: 220px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./images/logo-transparent-png.png" alt="Thriftlux Logo"> 
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">OUR PRODUCTS</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="#">SIGNIN</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="banner">
+        <img width="100%" src="./images/banner1000.jpg" alt="">
+    </div>
+    <div class="heading">
+    <h2>OUR PRODUCTS</h2>
+    <div class="card-container">
+        <!-- pant Card -->
+        <div class="card">
+            <img src="./images/60stee.webp" alt="">
+            <h3>T-SHIRT</h3>
+            <p>black vintage t-shirt for men</p>
+            <button>Add to Cart</button>
+        </div>
+        <!-- tees Card -->
+        <div class="card">
+            <img src="./images/tees.jpg" alt="">
+            <h3>T-SHIRT</h3>
+            <p>black vintage t-shirt for men</p>
+            <button>Add to Cart</button>
+        </div>
+        <!-- shoe Card -->
+        <div class="card">
+            <img src="./images/50STEE.jpg" alt="">
+            <h3>T-SHIRT</h3>
+            <p>black vintage t-shirt for men</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="./images/tshirt2.webp" alt="">
+            <h3>T-SHIRT</h3>
+            <p>Nike t-shirt for men </p>
+            <button>Add to Cart</button>
+        </div>
+        <!-- tees Card -->
+        <div class="card">
+            <img src="./images/50STEE.jpg" alt="">
+            <h3>T-SHIRT</h3>
+            <p>black vintage t-shirt for men</p>
+            <button>Add to Cart</button>
+        </div>
+        <!-- shoe Card -->
+        <div class="card">
+            <img src="./images/90stee.jpg" alt="">
+            <h3>T-SHIRT</h3>
+            <p>vintage t shirt for men</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="./images/40tee.jpg" alt="">
+            <h3>T-SHIRT</h3>
+            <p>black vintage t shirt men</p>
+            <button>Add to Cart</button>
+        </div>
+        <!-- tees Card -->
+        <div class="card">
+            <img src="./images/70stee.jpg" alt="">
+            <h3>T-SHIRT</h3>
+            <p>black vintage t-shirt men</p>
+            <button>Add to Cart</button>
+        </div>
+        </div>
+        <div>
+            <h1>ABOUT US</h1>
+            <div class="split-container">
+                <!-- Left Side: Photo -->
+                <div class="left">
+                    <img src="./images/banner1001.jpg" alt="A descriptive photo">
+                </div>
+                <!-- Right Side: Video -->
+                <div class="right">
+                    <video autoplay muted loop controls>
+                        <source src="./images/video3.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <h1>JOIN WITH US</h1>
+        </div>
+        <div class="signup-container">
+            <!-- Left Side: Logo Section -->
+            <div class="logo-section">
+                <img src="./images/logomf10.jpg" alt="ThriftLux Logo">
+            </div>
+    
+            <!-- Right Side: Sign-Up Form -->
+            <div class="form-section">
+                <div class="form-content">
+                    <h1>CREATE YOUR ACCOUNT</h1>
+                    <p>Join ThriftLux to embrace sustainable and stylish fashion. Sign up now!</p>
+                    <form action="dashboard.html" method="POST">
+                        <div class="input-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        </div>
+                        <button type="submit" class="btn">Sign Up</button>
+                        <p class="signin-link">Already have an account? <a href="signin.html">Sign in here</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <!-- Logo Section -->
+                <div class="footer-logo">
+                    <img src="./images/logo-transparent-png.png" alt="ThriftLux Logo">
+                    <p>ThriftLux - Sustainable Fashion for Everyone</p>
+                </div>
+    
+                <!-- Contact Info Section -->
+                <div class="footer-contact">
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Location: 123 ThriftLux Street, Fashion City</li>
+                        <li><i class="fas fa-phone-alt"></i> Phone: +91 8590898957</li>
+                        <li><i class="fas fa-envelope"></i> Email: contact@thriftlux.com</li>
+                    </ul>
+                </div>
+    
+                <!-- Social Media Section -->
+                <div class="footer-social">
+                    <h4>FOLLOW US ON</h4>
+                    <a href="https://www.instagram.com/thriftlux" target="_blank">
+                        <i class="fab fa-instagram"></i> @nn1thh
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 ThriftLux. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
+</html>
